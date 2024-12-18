@@ -1,4 +1,5 @@
 import 'package:f2_food_delivery_app_exploration_designe/utils/app_colors.dart';
+import 'package:f2_food_delivery_app_exploration_designe/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -11,9 +12,15 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.pink300,
-      body: Card(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+          Text(AppStrings.app_name)
+        ],),
+      ),
     );
   }
 }
