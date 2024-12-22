@@ -24,33 +24,50 @@ class _LoginScreenState extends State<LoginScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
         child: Center(
           child: Column(
-            children: [
+            children: const [
               Expanded(
                 flex: 4,
                 child: Center(
-                  child: ImageWidget(
-                      imageName: ImageNameStrings.log_in_hero_img,
-                      imageClassName: ImageClassNameStrings.banner,
-                      type: ImageType().png),
+                  child: _HeroImageWidget(),
                 ),
               ),
-              const Expanded(flex: 4, child: _TextAndTextFieldAndButtonWidget()),
-              Expanded(
-                  flex: 6,
-                  child: Column(
-                    children: [
-                      CustomLoginButton(
-                          title: AppStrings.btn_google, iconName: ImageNameStrings.lg_google, onTap: () {}),
-                      CustomLoginButton(
-                          title: AppStrings.btn_google, iconName: ImageNameStrings.lg_apple, onTap: () {}),
-                      CustomLoginButton(
-                          title: AppStrings.btn_google, iconName: ImageNameStrings.lg_facebook, onTap: () {}),
-                    ],
-                  )),
+              Expanded(flex: 4, child: _TextAndTextFieldAndButtonWidget()),
+              Expanded(flex: 6, child: _OtherLoginButtons()),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class _HeroImageWidget extends StatelessWidget {
+  const _HeroImageWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ImageWidget(
+        imageName: ImageNameStrings.log_in_hero_img,
+        imageClassName: ImageClassNameStrings.banner,
+        type: ImageType().png);
+  }
+}
+
+class _OtherLoginButtons extends StatelessWidget {
+  const _OtherLoginButtons({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CustomLoginButton(title: AppStrings.btn_google, iconName: ImageNameStrings.lg_google, onTap: () {}),
+        CustomLoginButton(title: AppStrings.btn_google, iconName: ImageNameStrings.lg_apple, onTap: () {}),
+        CustomLoginButton(title: AppStrings.btn_google, iconName: ImageNameStrings.lg_facebook, onTap: () {}),
+      ],
     );
   }
 }
