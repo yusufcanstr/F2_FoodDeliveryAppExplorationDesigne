@@ -1,3 +1,4 @@
+import 'package:f2_food_delivery_app_exploration_designe/screens/login_screen.dart';
 import 'package:f2_food_delivery_app_exploration_designe/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: const WelcomeScreen(),
+      home: const LoginScreen(),
     );
   }
 }
